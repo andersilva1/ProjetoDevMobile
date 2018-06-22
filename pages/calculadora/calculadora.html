@@ -1,0 +1,47 @@
+<ion-header>
+<!--Cabeçalho da página Calculadora-->
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Calculadora</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+<!--Campo responsável por receber o valor da variavel valor1-->
+    <ion-item>
+      <ion-label stacked>Valor 1</ion-label>
+      <ion-input type="number" [(ngModel)]="valor1"></ion-input>
+    </ion-item>
+
+<!--Campo responsável por receber o valor da variavel valor1-->
+    <ion-item>
+      <ion-label stacked>Valor 2</ion-label>
+      <ion-input type="number" [(ngModel)]="valor2"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <!--Botão responsável por fazer a soma-->
+  <button ion-button class="btnCalc" (click)="somar($event)">+</button>
+
+  <!--Botão responsável por fazer a subtração-->
+  <button ion-button class="btnCalc" (click)="subtrair($event)">-</button>
+
+  <!--Botão responsável por fazer a multiplicação-->
+  <button ion-button class="btnCalc" (click)="multiplicar($event)">x</button>
+
+  <!--Botão responsável por fazer a divisão-->
+  <button ion-button class="btnCalc" (click)="dividir($event)">/</button>
+
+  <!--Botão responsável por fazer a porcentagem-->
+  <button ion-button class="btnCalc" (click)="porcentagem($event)">%</button>
+
+  <!--Retorno dos cálculos realizados acima-->
+  <ion-item class="resultado">{{resultado}}</ion-item>
+
+</ion-content>

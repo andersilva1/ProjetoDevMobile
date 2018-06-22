@@ -1,0 +1,57 @@
+<ion-header>
+<!--Cabeçalho da tela de Contatos-->
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contatos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--Campo de busca dos contatos-->
+  <ion-searchbar (ionInput)="filtroContatos($event)" [(ngModel)] = "busca"></ion-searchbar>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let contato of contatos">
+      <!--Quando o botão for clicado aparecerá as informações de contato-->
+      <button ion-item (click)="editaContatos(contato.id)">
+        <h1>{{contato.nome}}</h1>
+        <h2>{{contato.email}}</h2>
+        <h3>{{contato.telefone}}</h3>
+        <h4>{{contato.dt_nascimento | date:'dd/MM/yyyy'}}</h4>
+      </button>
+
+      <ion-item-options side="left">
+        <!--Tela de exclusão/edição de conato será chamada nesta hora-->
+          <button ion-button color="danger" (click)="removeContatos(contato)">
+            <ion-icon name="trash"></ion-icon>
+            Excluir
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab right bottom>
+    <!--A tela de adição de novo contato será chamada assim que o icone for clicado-->
+      <button ion-fab color="light" (click)="addContatos()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+  <!--Conabilização de todos os contatos cadastrados-->
+    <ion-toolbar>
+      <p>Total: {{ contatos }}</p>
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label>Todos os Contatos</ion-label>
+          <ion-toggle (ionChange)="recuperaContatos()"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </ion-footer>

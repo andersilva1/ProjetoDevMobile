@@ -1,0 +1,17 @@
+page-calculadora {
+  ion-content {
+    text-align: center; //Alinhando a pagina ao centro
+  }
+// Formatação dos botões de cáclulo
+  .btnCalc {
+    width: 22%;
+    font-size: 8vw;
+  }
+
+  // Formatação do resultado
+  .resultado {
+    font-size: 20vw;
+    text-align: center;
+    margin-top: 15vh;
+  }
+}

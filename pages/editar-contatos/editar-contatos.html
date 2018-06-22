@@ -1,0 +1,38 @@
+<!--Menu de Edição de Contatos-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Editar Contatos
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+  <!--Campo que recebe gravará o valor do nome-->
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" name="nome" [(ngModel)]="modelo.nome"></ion-input>
+      </ion-item>
+  <!--Campo que recebe gravará o valor do email-->
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="modelo.email"></ion-input>
+      </ion-item>
+  <!--Campo que recebe gravará o valor do telefone-->
+      <ion-item>
+          <ion-label stacked>Telefone</ion-label>
+          <ion-input type="text" name="telefone" [(ngModel)]="modelo.telefone"></ion-input>
+        </ion-item>
+  <!--Campo que recebe gravará o valor da data de nascimento-->
+      <ion-item>
+        <ion-label stacked>Data Nascimento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="modelo.dt_nascimento"></ion-datetime>
+      </ion-item>
+
+    </ion-list>
+    <!--Botão responsável pela gravação-->
+    <button ion-button block (click)="salvar()">Salvar</button>
+
+</ion-content>
